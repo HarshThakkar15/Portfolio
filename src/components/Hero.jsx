@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { resume } from "../assets";
 import { personalInfo, socialLinks } from "../constants";

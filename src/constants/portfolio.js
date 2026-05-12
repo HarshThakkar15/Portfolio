@@ -22,27 +22,26 @@ const siteMetadata = {
 const sectionToggles = {
   about: true,
   skills: true,
+  developerActivity: true,
   projects: true,
   experience: true,
   certifications: true,
   contact: true,
-  openSource: false,
   achievements: false,
-  blogs: false,
-  talks: false,
-  podcast: false,
 };
 
 const sectionDefinitions = [
   { id: "about", title: "About", toggleKey: "about" },
   { id: "skills", title: "Skills", toggleKey: "skills" },
-  { id: "projects", title: "Projects", toggleKey: "projects" },
   { id: "experience", title: "Experience", toggleKey: "experience" },
+  { id: "projects", title: "Projects", toggleKey: "projects" },
+  { id: "activity", title: "Activity", toggleKey: "developerActivity" },
   { id: "certifications", title: "Certifications", toggleKey: "certifications" },
   { id: "contact", title: "Contact", toggleKey: "contact" },
 ];
 
 const navLinks = sectionDefinitions
+  .filter((section) => section.id !== "activity")
   .filter((section) => sectionToggles[section.toggleKey])
   .map(({ id, title }) => ({ id, title }));
 

@@ -5,6 +5,7 @@ import {
   Certifications,
   CodeRainBackground,
   Contact,
+  DeveloperActivity,
   Experience,
   Footer,
   Hero,
@@ -81,8 +82,9 @@ function HomePage({ theme, onToggleTheme }) {
           <Hero />
           {sectionToggles.about ? <About /> : null}
           {sectionToggles.skills ? <Skills /> : null}
-          {sectionToggles.projects ? <Projects /> : null}
           {sectionToggles.experience ? <Experience /> : null}
+          {sectionToggles.projects ? <Projects /> : null}
+          {sectionToggles.developerActivity ? <DeveloperActivity /> : null}
           {sectionToggles.certifications ? <Certifications /> : null}
           {sectionToggles.contact ? <Contact /> : null}
         </main>
