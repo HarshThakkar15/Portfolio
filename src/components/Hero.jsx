@@ -96,7 +96,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative flex min-h-screen items-center overflow-hidden px-6 pb-20 pt-36 sm:px-10 lg:px-12"
+      className="relative flex min-h-screen items-center overflow-hidden px-5 pb-20 pt-36 sm:px-10 lg:px-12"
       id="home"
     >
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_20%,rgba(34,211,238,0.14),transparent_30%),radial-gradient(circle_at_82%_12%,rgba(168,85,247,0.16),transparent_34%)]" />
@@ -184,29 +184,39 @@ export default function Hero() {
           initial={{ opacity: 0, x: 40, scale: 0.96 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="hero-focus-shell relative z-10 mx-auto w-full max-w-xl overflow-hidden rounded-3xl border border-cyan-300/20 bg-slate-900/70 p-5 shadow-[0_0_32px_rgba(34,211,238,0.12)] sm:p-6 lg:mx-0 lg:max-w-none"
+          className="hero-focus-shell relative z-10 mx-auto w-full max-w-xl overflow-hidden rounded-2xl border border-cyan-300/20 bg-slate-900/70 p-4 shadow-[0_0_32px_rgba(34,211,238,0.12)] sm:rounded-3xl sm:p-5 md:p-6 lg:mx-0 lg:max-w-none"
         >
-          <div className="hero-focus-panel flex flex-col rounded-2xl border border-white/10">
-            <div className="flex shrink-0 items-center gap-2 border-b border-white/10 px-4 py-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
-              <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
-              <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-              <span className="ml-3 font-mono text-xs text-slate-400">career-story.js</span>
+          <div className="hero-focus-panel flex min-w-0 flex-col rounded-xl border border-white/10 sm:rounded-2xl">
+            <div className="flex shrink-0 items-center border-b border-white/10 px-2 py-3 sm:gap-2 sm:px-4 sm:py-3 lg:px-6 lg:py-3.5 xl:px-7 xl:py-4">
+              <div className="flex shrink-0 items-center gap-1.5 sm:gap-2" aria-hidden>
+                <span className="h-2 w-2 rounded-full bg-rose-400 sm:h-2.5 sm:w-2.5 lg:h-3 lg:w-3" />
+                <span className="h-2 w-2 rounded-full bg-amber-300 sm:h-2.5 sm:w-2.5 lg:h-3 lg:w-3" />
+                <span className="h-2 w-2 rounded-full bg-emerald-400 sm:h-2.5 sm:w-2.5 lg:h-3 lg:w-3" />
+              </div>
+              <span className="min-w-0 flex-1 truncate text-center font-mono text-[0.65rem] text-slate-400 sm:text-xs lg:text-sm lg:tracking-wide">
+                career-story.js
+              </span>
+              <div className="w-[2.125rem] shrink-0 sm:w-14 lg:w-16 xl:w-[4.5rem]" aria-hidden />
             </div>
 
-            <div className="hero-focus-copy px-4 py-5 font-mono text-[0.9375rem] leading-7 sm:text-base sm:leading-8">
+            <div className="hero-focus-copy min-w-0 px-2 py-3 font-mono text-[0.6875rem] leading-[1.5] sm:px-4 sm:py-5 sm:text-[0.8125rem] sm:leading-6 md:text-[0.875rem] md:leading-[1.55] lg:px-6 lg:py-6 lg:text-[0.9375rem] lg:leading-7 xl:px-7 xl:py-7 xl:text-[1rem] xl:leading-7">
               {terminalLines.map((line, index) => (
-                <div key={`${line}-${index}`} className="flex gap-3">
-                  <span className="w-7 shrink-0 text-right text-slate-500 tabular-nums">
+                <div
+                  key={`${line}-${index}`}
+                  className="grid min-w-0 grid-cols-[1.75rem_1fr] items-baseline gap-x-2 sm:grid-cols-[2.125rem_1fr] sm:gap-x-3 lg:grid-cols-[2.375rem_1fr] lg:gap-x-4 lg:rounded-lg lg:px-2 lg:py-0 lg:transition-colors lg:hover:bg-cyan-400/[0.08] xl:px-2.5"
+                >
+                  <span className="select-none text-right tabular-nums text-slate-500">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="min-w-0 whitespace-pre-wrap break-words text-slate-200">{line || " "}</span>
+                  <span className="min-w-0 [overflow-wrap:anywhere] whitespace-pre-wrap text-slate-200 [line-height:inherit]">
+                    {line || " "}
+                  </span>
                 </div>
               ))}
               {!terminalDone ? (
-                <div className="mt-1 flex gap-3">
-                  <span className="w-7 shrink-0" />
-                  <span className="inline-block h-4 w-2 animate-pulse bg-cyan-300" />
+                <div className="mt-1 grid min-w-0 grid-cols-[1.75rem_1fr] items-center gap-x-2 sm:grid-cols-[2.125rem_1fr] sm:gap-x-3 lg:grid-cols-[2.375rem_1fr] lg:gap-x-4 lg:px-2 xl:px-2.5">
+                  <span className="block min-h-[1em]" aria-hidden />
+                  <span className="inline-block h-3.5 w-1.5 animate-pulse bg-cyan-300 sm:h-4 sm:w-2" />
                 </div>
               ) : null}
             </div>

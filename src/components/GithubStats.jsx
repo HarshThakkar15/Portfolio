@@ -55,8 +55,8 @@ export default function GithubStats({ profile, metrics }) {
     },
     {
       label: "Recent activity",
-      value: metrics.contributions.length,
-      hint: "Total recent activity fetched from GitHub",
+      value: metrics.recentActivityCount,
+      hint: "Public events fetched from GitHub",
     },
   ];
 

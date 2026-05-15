@@ -49,28 +49,28 @@ function DeveloperActivityContent() {
             <GithubStats profile={profile} metrics={metrics} />
           </motion.div>
 
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="grid min-w-0 gap-6 items-stretch lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
             <motion.article
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="activity-surface relative overflow-hidden rounded-3xl p-6"
+              className="activity-surface relative overflow-hidden rounded-3xl p-5 sm:p-6 lg:p-5"
             >
               <div className="pointer-events-none absolute -right-10 top-0 h-40 w-40 rounded-full bg-purple-500/20 blur-3xl" />
-              <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+              <div className="relative flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5 lg:gap-4">
                 <img
                   src={profile.avatar_url}
                   alt={`${profile.login} avatar`}
-                  className="h-24 w-24 rounded-2xl border border-cyan-300/30 object-cover shadow-lg shadow-cyan-500/20"
+                  className="h-[5.5rem] w-[5.5rem] shrink-0 rounded-2xl border border-cyan-300/30 object-cover shadow-lg shadow-cyan-500/20 sm:h-24 sm:w-24"
                   loading="lazy"
                 />
-                <div>
+                <div className="flex min-w-0 flex-1 flex-col">
                   <p className="text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">GitHub profile</p>
-                  <h3 className="mt-2 font-['Space_Grotesk'] text-2xl font-semibold text-[var(--text-primary)]">{profile.name || profile.login}</h3>
+                  <h3 className="mt-1.5 font-['Space_Grotesk'] text-xl font-semibold text-[var(--text-primary)] sm:mt-2 sm:text-2xl">{profile.name || profile.login}</h3>
                   <p className="text-sm text-[var(--accent-cyan)]">@{profile.login}</p>
-                  <p className="mt-3 text-sm text-[var(--text-primary)]">{profile.bio || "Building in public with a focus on full stack delivery."}</p>
-                  <div className="mt-4 flex flex-wrap gap-3 text-xs text-[var(--text-muted)]">
+                  <p className="mt-2 text-sm leading-snug text-[var(--text-primary)] sm:mt-3">{profile.bio || "Building in public with a focus on full stack delivery."}</p>
+                  <div className="mt-3 flex flex-wrap gap-2 text-xs text-[var(--text-muted)] sm:mt-4 sm:gap-3">
                     {profile.location ? <span>{profile.location}</span> : null}
                     {profile.company ? <span>{profile.company}</span> : null}
                     {profile.blog ? (
@@ -87,6 +87,7 @@ function DeveloperActivityContent() {
             </motion.article>
 
             <motion.div
+              className="min-w-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}

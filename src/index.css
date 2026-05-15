@@ -415,6 +415,18 @@ canvas {
   background: linear-gradient(140deg, rgba(56, 189, 248, 0.14), rgba(2, 6, 23, 0.92), rgba(168, 85, 247, 0.12));
 }
 
+@media (min-width: 1024px) {
+  .hero-focus-panel {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-focus-panel {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), inset 0 -1px 0 rgba(0, 0, 0, 0.18);
+  }
+}
+
 /* ── Keyframe Animations ── */
 
 @keyframes gradient-shift {
@@ -672,6 +684,19 @@ canvas {
     0 0 0 1px rgba(34, 211, 238, 0.12);
 }
 
+@media (min-width: 1024px) {
+  .hero-focus-shell:hover {
+    translate: 0 -8px;
+    scale: 1.015;
+    box-shadow: 0 22px 60px rgba(34, 211, 238, 0.22),
+      0 0 0 1px rgba(34, 211, 238, 0.14);
+  }
+
+  [data-theme="dawn"] .hero-focus-shell:hover {
+    box-shadow: 0 26px 64px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(2, 132, 199, 0.26);
+  }
+}
+
 /* ── Availability Chip Pulse ── */
 
 .availability-chip {
@@ -807,9 +832,21 @@ canvas {
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
 }
 
+@media (min-width: 1024px) {
+  [data-theme="dawn"] .hero-focus-shell {
+    box-shadow: 0 22px 52px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(2, 132, 199, 0.18);
+  }
+}
+
 [data-theme="dawn"] .hero-focus-panel {
   border-color: rgba(15, 23, 42, 0.12);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(227, 239, 255, 0.92), rgba(237, 231, 255, 0.9));
+}
+
+@media (min-width: 1024px) {
+  [data-theme="dawn"] .hero-focus-panel {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), inset 0 -1px 0 rgba(15, 23, 42, 0.06);
+  }
 }
 
 [data-theme="dawn"] .hero-focus-copy {

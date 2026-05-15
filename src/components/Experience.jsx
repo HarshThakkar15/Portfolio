@@ -40,7 +40,7 @@ function ExperienceContent() {
             >
               <h3 className="font-['Space_Grotesk'] text-lg font-semibold">{experience.title}</h3>
               <p className="mt-1 text-sm text-cyan-200">{experience.companyName}</p>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-4 space-y-2 list-disc list-inside">
                 {experience.points.map((point) => (
                   <li key={point} className="text-sm leading-relaxed text-slate-300">
                     {point}

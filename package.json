@@ -2,6 +2,7 @@
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://harsh-thakkar-portfolio.vercel.app/",
   "type": "module",
   "scripts": {
     "dev": "vite",

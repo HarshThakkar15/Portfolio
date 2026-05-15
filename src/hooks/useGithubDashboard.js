@@ -83,6 +83,7 @@ export default function useGithubDashboard(githubProfileUrl) {
     const repos = state.repositories;
     const starsTotal = repos.reduce((sum, repo) => sum + (repo.stargazers_count ?? 0), 0);
     const publicRepos = repos.length;
+    const recentActivityCount = state.events.length;
     const ownedNonFork = repos.filter((repo) => !repo.fork);
     const topLanguages = summarizeLanguages(ownedNonFork).slice(0, 6);
     const latestRepos = ownedNonFork.slice(0, 6);
@@ -91,6 +92,7 @@ export default function useGithubDashboard(githubProfileUrl) {
     return {
       starsTotal,
       publicRepos,
+      recentActivityCount,
       topLanguages,
       latestRepos,
       contributions,

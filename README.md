@@ -3,6 +3,8 @@
 A modern personal portfolio built with React and Vite.  
 This project showcases skills, projects, experience, certifications, and contact details in a fast and responsive single-page experience.
 
+**Live site:** [https://harsh-thakkar-portfolio.vercel.app/](https://harsh-thakkar-portfolio.vercel.app/)
+
 ## Tech Stack
 
 - React
@@ -77,12 +79,3 @@ Update this file to change:
 - Experience
 - Certifications
 - Section visibility toggles
-
-## Deployment
-
-You can deploy this project to any static host, such as:
-
-- Vercel
-- Netlify
-- GitHub Pages
-- Cloudflare Pages

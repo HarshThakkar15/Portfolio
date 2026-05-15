@@ -13,7 +13,7 @@ const siteMetadata = {
   ],
   author: "Harsh Thakkar",
   siteName: "Harsh Thakkar Portfolio",
-  siteUrl: "https://your-domain.com",
+  siteUrl: "https://harsh-thakkar-portfolio.vercel.app",
   locale: "en_US",
   ogImage: "/og-cover.png",
   twitterCard: "summary_large_image",
