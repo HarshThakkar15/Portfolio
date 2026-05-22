@@ -26,9 +26,9 @@ export default function TerminalLoader({ onComplete }) {
         clearInterval(interval);
         setTimeout(() => {
           onComplete();
-        }, 800);
+        }, 400);
       }
-    }, 400);
+    }, 300);
 
     return () => clearInterval(interval);
   }, [onComplete]);

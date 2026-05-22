@@ -79,6 +79,22 @@ export function summarizeLanguages(repositories) {
     .sort((a, b) => b.count - a.count);
 }
 
+const DAY_MS = 86400000;
+
+export function filterEventsWithinDays(events, days = 30) {
+  if (!Array.isArray(events) || events.length === 0) {
+    return [];
+  }
+
+  const cutoff = Date.now() - days * DAY_MS;
+  return events.filter((event) => {
+    if (!event?.created_at) {
+      return false;
+    }
+    return new Date(event.created_at).getTime() >= cutoff;
+  });
+}
+
 export function buildContributionBuckets(events, days = 14) {
   if (!Array.isArray(events) || events.length === 0) {
     return Array.from({ length: days }, (_, index) => ({
@@ -89,7 +105,7 @@ export function buildContributionBuckets(events, days = 14) {
   }
 
   const now = Date.now();
-  const dayMs = 86400000;
+  const dayMs = DAY_MS;
   const buckets = Array.from({ length: days }, (_, index) => {
     const dayStart = new Date(now - (days - 1 - index) * dayMs);
     dayStart.setHours(0, 0, 0, 0);

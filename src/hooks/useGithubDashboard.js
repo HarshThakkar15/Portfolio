@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   buildContributionBuckets,
+  filterEventsWithinDays,
   fetchGithubEvents,
   fetchGithubRepos,
   fetchGithubUser,
@@ -83,10 +84,10 @@ export default function useGithubDashboard(githubProfileUrl) {
     const repos = state.repositories;
     const starsTotal = repos.reduce((sum, repo) => sum + (repo.stargazers_count ?? 0), 0);
     const publicRepos = repos.length;
-    const recentActivityCount = state.events.length;
+    const recentActivityCount = filterEventsWithinDays(state.events, 30).length;
     const ownedNonFork = repos.filter((repo) => !repo.fork);
     const topLanguages = summarizeLanguages(ownedNonFork).slice(0, 6);
-    const latestRepos = ownedNonFork.slice(0, 6);
+    const latestRepos = ownedNonFork.slice(0, 4);
     const contributions = buildContributionBuckets(state.events);
 
     return {

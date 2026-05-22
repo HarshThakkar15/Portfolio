@@ -37,10 +37,40 @@ function AnimatedInteger({ value, className }) {
     return () => controls.stop();
   }, [reducedMotion, value]);
 
+  return <span className={className}>{display.toLocaleString()}</span>;
+}
+
+function ActivityStatCard({ label, value, hint, accent }) {
+  const accentStyles = {
+    cyan: {
+      blur: "bg-cyan-500/20",
+      value: "text-[var(--accent-cyan)]",
+    },
+    purple: {
+      blur: "bg-purple-500/20",
+      value: "text-[var(--accent-purple)]",
+    },
+  };
+  const theme = accentStyles[accent] ?? accentStyles.cyan;
+
   return (
-    <span className={className}>
-      {display.toLocaleString()}
-    </span>
+    <motion.article
+      variants={statCard}
+      className="activity-surface group relative flex h-full min-h-0 min-w-0 flex-col overflow-hidden rounded-2xl p-5 sm:p-6"
+    >
+      <div className={`pointer-events-none absolute -right-8 top-0 h-28 w-28 rounded-full blur-3xl ${theme.blur}`} />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-400/5 via-transparent to-purple-500/5 opacity-100 transition duration-300 group-hover:from-cyan-400/10 group-hover:to-purple-500/10" />
+
+      <div className="relative flex h-full min-h-0 flex-col justify-between gap-3">
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">{label}</p>
+
+        <p className={`font-['Space_Grotesk'] text-4xl font-semibold leading-none text-center justify-center tabular-nums ${theme.value}`}>
+          <AnimatedInteger value={value} />
+        </p>
+
+        <p className="border-t border-[var(--border-soft)] pt-3 text-[0.7rem] leading-snug text-[var(--text-muted)]">{hint}</p>
+      </div>
+    </motion.article>
   );
 }
 
@@ -51,38 +81,24 @@ export default function GithubStats({ profile, metrics }) {
     {
       label: "Public repositories",
       value: metrics.publicRepos,
-      hint: "Total repos fetched from GitHub",
+      hint: "Repos loaded from GitHub profile",
+      accent: "cyan",
     },
     {
       label: "Recent activity",
       value: metrics.recentActivityCount,
-      hint: "Public events fetched from GitHub",
+      hint: "Public events from GitHub feed",
+      accent: "purple",
     },
   ];
 
   return (
-    <div className="grid gap-4 sm:grid-cols-3">
+    <>
       {cards.map((card) => (
-        <motion.article
-          key={card.label}
-          variants={statCard}
-          className="activity-surface group relative overflow-hidden rounded-2xl px-5 py-6 transition duration-300 hover:border-cyan-300/45 hover:shadow-[0_12px_40px_rgba(34,211,238,0.18)]"
-        >
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-purple-500/10 opacity-0 transition duration-300 group-hover:opacity-100" />
-
-          <p className="text-xs uppercase tracking-[0.18em] text-[var(--text-muted)]">
-            {card.label}
-          </p>
-
-          <p className="mt-3 font-['Space_Grotesk'] text-3xl font-semibold text-[var(--text-primary)]">
-            <AnimatedInteger value={card.value} />
-          </p>
-
-          <p className="mt-2 text-xs text-[var(--text-muted)]">
-            {card.hint}
-          </p>
-        </motion.article>
+        <ActivityStatCard key={card.label} {...card} />
       ))}
-    </div>
+    </>
   );
 }
+
+export { statCard };

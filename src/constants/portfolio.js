@@ -73,7 +73,7 @@ const personalInfo = {
     institute: "Ganpat University",
     degree: "B. Tech in IT",
     period: "2022 - 2026",
-    score: "CGPA 8.65/10",
+    score: "CGPA 8.75/10",
   },
 };
 
@@ -268,6 +268,11 @@ const projects = [
 ];
 
 const certifications = [
+  {
+    name: "Claude Code in Action",
+    issuer: "Anthropic Academy",
+    credentialUrl: "https://verify.skilljar.com/c/n4q55yxzz2ed",
+  },
   {
     name: "Introduction to Red Hat OpenShift AI",
     issuer: "Red Hat",
