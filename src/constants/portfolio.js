@@ -27,7 +27,6 @@ const sectionToggles = {
   experience: true,
   certifications: true,
   contact: true,
-  achievements: false,
 };
 
 const sectionDefinitions = [
@@ -50,11 +49,9 @@ const personalInfo = {
   tagline:
     "Full Stack Developer focused on building responsive frontend experiences, scalable backend systems, and clean production-ready applications.",
   location: "Gandhinagar, Gujarat, India",
-  phone: "+91 9662050094",
   email: "thakkarharsh1508@gmail.com",
   linkedIn: "https://in.linkedin.com/in/harsh-thakkar1508",
   github: "https://github.com/HarshThakkar15",
-  leetCode: "",
   roles: [
     "Full Stack Developer",
     "MERN Stack Developer",
@@ -62,13 +59,13 @@ const personalInfo = {
     "Cybersecurity Enthusiast",
   ],
   availabilityMessage:
-    "Open to Full Stack / MERN Stack Developer roles, internships and freelance opportunities - available for remote, hybrid or on-site opportunities.",
+    "Actively seeking entry-level Full Stack and MERN Stack opportunities. Available for remote, hybrid, or on-site roles.",
   availabilityShort:
     "Open to Full Stack & MERN opportunities.",
   resumeHeadline:
-    "Full Stack Developer focused on MERN applications, API architecture, and secure deployment workflows.",
+    "Full Stack Developer specializing in MERN stack applications, scalable REST APIs, and responsive web experiences.",
   about:
-    "I'm a full stack developer focused on building scalable, user-centric web applications with clean architecture, responsive interfaces and efficient backend systems. My internship experience strengthened my expertise in React, Node.js, Express.js and MongoDB.",
+    "I'm a Full Stack Developer passionate about building scalable and user-focused web applications. I enjoy creating responsive frontend experiences, efficient backend systems, and clean APIs using the MERN stack. My internship experience strengthened my expertise in React, Node.js, Express.js and MongoDB.",
   education: {
     institute: "Ganpat University",
     degree: "B. Tech in IT",
@@ -216,7 +213,7 @@ const experiences = [
     iconBg: "#1D4ED8",
     date: "Dec 2025 - Apr 2026",
     points: [
-      "Developed and optimized responsive React.js interfaces to improve user engagement.",
+      "Developed responsive React.js interfaces and optimized UI performance for improved usability and engagement.",
       "Built and integrated REST APIs using Node.js and Express.js.",
       "Designed scalable MongoDB schemas to improve data consistency and query performance.",
       "Collaborated in an Agile team using Git workflows and peer code reviews.",

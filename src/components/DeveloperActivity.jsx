@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { personalInfo } from "../constants";
 import useGithubDashboard from "../hooks/useGithubDashboard";
-// import ActivityTerminal from "./ActivityTerminal";
 import GithubStats, { statCard } from "./GithubStats";
-// import RepoCard from "./RepoCard";
 import SectionWrapper from "./SectionWrapper";
 
 

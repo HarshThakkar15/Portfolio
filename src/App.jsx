@@ -97,7 +97,13 @@ function HomePage({ theme, onToggleTheme }) {
 
 export default function App() {
   const [theme, setTheme] = useState(DEFAULT_THEME);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    try {
+      return !sessionStorage.getItem("portfolio_loaded");
+    } catch {
+      return true;
+    }
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -110,7 +116,16 @@ export default function App() {
   return (
     <>
       {loading ? (
-        <TerminalLoader onComplete={() => setLoading(false)} />
+        <TerminalLoader
+          onComplete={() => {
+            setLoading(false);
+            try {
+              sessionStorage.setItem("portfolio_loaded", "true");
+            } catch (err) {
+              console.warn("sessionStorage is not accessible:", err);
+            }
+          }}
+        />
       ) : (
         <>
           <ScrollToTop />
