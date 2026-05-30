@@ -25,9 +25,9 @@ export default function Hero() {
 
   const terminalScript = useMemo(() => {
     return [
-      "> React.js + Node.js Developer",
-      "> Backend APIs & MongoDB Systems",
-      "> Clean UI • Secure Architecture • Modern Web",
+      "> MERN Stack Developer",
+      "> REST APIs & Database Design",
+      "> Production Ready Web Applications",
       "> Available for Full Stack Opportunities",
     ].join("\n");
   }, []);

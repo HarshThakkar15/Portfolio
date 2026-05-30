@@ -55,8 +55,7 @@ const personalInfo = {
   roles: [
     "Full Stack Developer",
     "MERN Stack Developer",
-    "React.js Developer",
-    "Cybersecurity Enthusiast",
+    "Exploring AI",
   ],
   availabilityMessage:
     "Actively seeking entry-level Full Stack and MERN Stack opportunities. Available for remote, hybrid, or on-site roles.",
@@ -84,11 +83,6 @@ const aboutHighlights = [
     title: "Backend Systems",
     value:
       "Scalable REST APIs using Node.js, Express.js and MongoDB with optimized schema design.",
-  },
-  {
-    title: "Security Mindset",
-    value:
-      "Hands-on exposure to Kali Linux, Nmap, Wireshark and cybersecurity fundamentals.",
   },
 ];
 
@@ -155,22 +149,32 @@ const technologies = [
     category: "Tooling",
   },
   {
-    name: "Kali Linux",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kalilinux/kalilinux-original.svg",
-    category: "Cybersecurity",
+    name: "Vercel",
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/vercel.svg",
+    category: "Deployment",
   },
-  { name: "Nmap", icon: "/tech-icons/nmap.svg", category: "Cybersecurity" },
   {
-    name: "Wireshark",
-    icon: "/tech-icons/wireshark.svg",
-    category: "Cybersecurity",
+    name: "Render",
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/render.svg",
+    category: "Deployment",
   },
+  // {
+  //   name: "Kali Linux",
+  //   icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kalilinux/kalilinux-original.svg",
+  //   category: "Cybersecurity",
+  // },
+  // { name: "Nmap", icon: "/tech-icons/nmap.svg", category: "Cybersecurity" },
+  // {
+  //   name: "Wireshark",
+  //   icon: "/tech-icons/wireshark.svg",
+  //   category: "Cybersecurity",
+  // },
   { name: "SEO", icon: "/tech-icons/seo.svg", category: "Concept" },
-  {
-    name: "Cryptography",
-    icon: "/tech-icons/cryptography.svg",
-    category: "Concept",
-  },
+  // {
+  //   name: "Cryptography",
+  //   icon: "/tech-icons/cryptography.svg",
+  //   category: "Concept",
+  // },
 ];
 
 const skillCapabilities = [
@@ -276,11 +280,6 @@ const certifications = [
     credentialUrl: "https://www.credly.com/badges/a8899dd6-a101-4693-aa16-5433f07a56eb/",
   },
   {
-    name: "Getting Started with Linux Fundamentals",
-    issuer: "Red Hat Training",
-    credentialUrl: "https://www.credly.com/badges/e795f3ce-b27e-4762-bd80-2a795b202d99/",
-  },
-  {
     name: "SQL (Intermediate)",
     issuer: "HackerRank",
     credentialUrl: "https://www.hackerrank.com/certificates/bf6abb25dfe9",
@@ -289,6 +288,21 @@ const certifications = [
     name: "Java (Basic)",
     issuer: "HackerRank",
     credentialUrl: "https://www.hackerrank.com/certificates/e9a3ef831779",
+  },
+  {
+    name: "Front End Development Libraries",
+    issuer: "freeCodeCamp",
+    credentialUrl: "",
+  },
+  {
+    name: "Responsive Web Design",
+    issuer: "freeCodeCamp",
+    credentialUrl: "",
+  },
+  {
+    name: "Getting Started with Linux Fundamentals",
+    issuer: "Red Hat Training",
+    credentialUrl: "https://www.credly.com/badges/e795f3ce-b27e-4762-bd80-2a795b202d99/",
   },
   {
     name: "Career Essentials in Cybersecurity",
@@ -300,16 +314,6 @@ const certifications = [
     name: "Introduction to Cybersecurity",
     issuer: "Cisco",
     credentialUrl: "https://www.credly.com/badges/03ec336a-6919-4dc3-b752-77054a21c1e8",
-  },
-  {
-    name: "Front End Development Libraries",
-    issuer: "freeCodeCamp",
-    credentialUrl: "",
-  },
-  {
-    name: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    credentialUrl: "",
   },
 ];
 
